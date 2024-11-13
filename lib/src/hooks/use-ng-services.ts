@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { element } from 'angular';
-import { Injectable } from "../decorators/inject";
+import { InjectToken } from "../types";
 
 declare global {
   interface Window {
@@ -10,16 +10,16 @@ declare global {
 }
 
 // TODO: support other services
-type InjectServiceResolver<Service extends Injectable> =
+type InjectServiceResolver<Service extends InjectToken> =
   Service extends "$scope"
   ? angular.IScope
   : never;
 
 // Helper type to transform tuple of service names into tuple of resolved service types
-type ResolveServices<T extends Injectable[]> = {
+type ResolveServices<T extends InjectToken[]> = {
   [K in T[number]as K extends string
   ? CamelCase<K>
-  : never]: K extends Injectable ? InjectServiceResolver<K> : never;
+  : never]: K extends InjectToken ? InjectServiceResolver<K> : never;
 };
 
 // Helper type to convert a string to camelCase
@@ -27,7 +27,7 @@ type CamelCase<S extends string> = S extends `${infer First}${infer Rest}`
   ? `${Lowercase<First>}${Rest}`
   : S;
 
-const useNgServices = <T extends Injectable[]>(
+const useNgServices = <T extends InjectToken[]>(
   ...serviceNames: [...T]
 ): ResolveServices<T> => {
 
@@ -57,5 +57,5 @@ const useNgServices = <T extends Injectable[]>(
   }, [])
 };
 
-// const inject = <T extends Injectable>(service: T): ResolveServices<[T]> => useNgServices(service)[service]  ;
+// const inject = <T extends InjectToken>(service: T): ResolveServices<[T]> => useNgServices(service)[service]  ;
 export { useNgServices };
