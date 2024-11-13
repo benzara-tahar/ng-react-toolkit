@@ -1,0 +1,14 @@
+.react {
+   border: 2px solid blue;
+   padding: 0.5rem;
+ }
+
+ .angular {
+   border: 2px solid red;
+   padding: 0.5rem;
+ }
+
+ .grid-container {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+ }
