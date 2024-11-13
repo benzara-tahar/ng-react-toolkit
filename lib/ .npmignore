@@ -1,0 +1,11 @@
+# lib/.npmignore
+src/
+tests/
+jest.config.ts
+jest.setup.js
+tsconfig.json
+.gitignore
+*.test.ts
+*.spec.ts
+coverage/
+node_modules/
