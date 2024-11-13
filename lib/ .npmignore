@@ -1,11 +1,23 @@
-# lib/.npmignore
+# Source
 src/
-tests/
-jest.config.ts
-jest.setup.js
-tsconfig.json
-.gitignore
-*.test.ts
-*.spec.ts
+
+# Tests
+__tests__
+*.spec.*
+*.test.*
 coverage/
+jest.config.ts
+tsconfig.test.json
+
+# Config files
+.gitignore
+.npmignore
+tsconfig.json
+.eslintrc
+.prettierrc
+
+# Development files
 node_modules/
+.vscode/
+.idea/
+*.log

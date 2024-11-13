@@ -2,7 +2,7 @@ import 'angular'
 import 'angular-mocks'
 import * as angular from 'angular'
 
-import { TestService } from "./TestService";
+import { TestService } from "../services/TestService";
 
 // TODO: fix angular-mock
 describe('TestService', () => {

@@ -9,6 +9,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "pnpm run clean && tsc",
+    "build:test": "tsc -p tsconfig.test.json",
     "dev": "tsc --watch",
     "test": "jest",
     "test:watch": "jest --watch",

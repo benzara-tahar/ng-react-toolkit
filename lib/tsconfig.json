@@ -24,6 +24,12 @@
    "include": ["src", "src/**/*.spec.ts", "src/**/*.test.ts", "jest.config.ts"],
    "exclude": [
       "node_modules",
-      "dist"
+      "dist",
+      "**/*.spec.ts",
+      "**/*.test.ts",
+      "**/*.spec.tsx",
+      "**/*.test.tsx",
+      "**/__tests__/*",
+      "jest.config.ts"
    ]
 }
