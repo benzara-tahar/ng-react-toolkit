@@ -1,5 +1,6 @@
 
 // to provide typesafety accross the app, add any new service used here
+// TODO: make this generic
 export type Injectable = "$scope" | "TodoService";
 export function Inject(...dependencies: readonly Injectable[]) : ClassDecorator {
 
