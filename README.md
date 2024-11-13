@@ -130,6 +130,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 
-- AngularJS team for their years of maintaining AngularJS
-- React team for their excellent documentation
-- All contributors who have helped with examples and documentation
+
+- [angular2react](https://github.com/coatue-oss/angular2react) - Coatue's library for converting AngularJS components to React
+- [ngReact](https://github.com/ngReact/ngReact) - Use React Components in Angular Applications
+- [ngx-zustand](https://github.com/Alfxjx/ngx-zustand) - Zustand implementation for ng
+- [zustand-lit](https://github.com/ennjin/zustand-lit) - A zustand adapter for lit.js (LitElement)
