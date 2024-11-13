@@ -2,7 +2,7 @@
 
 A comprehensive toolkit and guide for incrementally migrating AngularJS (1.x) applications to modern React. This repository provides utilities, patterns, and real-world examples to help teams successfully transition their legacy AngularJS applications to React while maintaining production stability.
 
-[![npm version](https://img.shields.io/npm/v/angularjs-to-react-migration-toolkit.svg)](https://www.npmjs.com/package/angularjs-to-react-migration-toolkit)
+[![npm version](https://img.shields.io/npm/v/ng-react-toolkit.svg)](https://www.npmjs.com/package/ng-react-toolkit)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Key Features
@@ -20,21 +20,21 @@ A comprehensive toolkit and guide for incrementally migrating AngularJS (1.x) ap
 ### Installation
 
 ```bash
-npm install angularjs-to-react-migration-toolkit
+npm install ng-react-toolkit
 ```
 
 ### Basic Usage
 
 ```javascript
 // Mount React component in AngularJS
-import { wrapReactComponent } from 'angularjs-to-react-migration-toolkit';
+import { wrapReactComponent } from 'ng-react-toolkit';
 import MyReactComponent from './MyReactComponent';
 
 angular.module('myApp')
   .directive('myComponent', wrapReactComponent(MyReactComponent));
 
 // Mount AngularJS component in React
-import { wrapAngularJsComponent } from 'angularjs-to-react-migration-toolkit';
+import { wrapAngularJsComponent } from 'ng-react-toolkit';
 
 const WrappedAngularComponent = wrapAngularJsComponent('myAngularDirective');
 ```
@@ -112,8 +112,8 @@ Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md)
 ### Development Setup
 
 ```bash
-git clone https://github.com/username/angularjs-to-react-migration-toolkit.git
-cd angularjs-to-react-migration-toolkit
+git clone https://github.com/benzara-tahar/ng-react-toolkit.git
+cd ng-react-toolkit
 npm install
 npm test
 ```
@@ -121,8 +121,8 @@ npm test
 ## Support
 
 - 📖 [Documentation](docs/README.md)
-- 💬 [Discussions](https://github.com/username/angularjs-to-react-migration-toolkit/discussions)
-- 🐛 [Issue Tracker](https://github.com/username/angularjs-to-react-migration-toolkit/issues)
+- 💬 [Discussions](https://github.com/benzara-tahar/ng-react-toolkit/discussions)
+- 🐛 [Issue Tracker](https://github.com/benzara-tahar/ng-react-toolkit/issues)
 
 ## License
 
