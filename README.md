@@ -1,5 +1,11 @@
 # AngularJS to React Migration Toolkit
 
+
+⚠️ **Work In Progress - Not Production Ready**
+
+> **WARNING**: This library is currently in early development stage (v0.0.x) and is **NOT** ready for production use. APIs may change significantly between versions without notice.
+
+
 A comprehensive toolkit and guide for incrementally migrating AngularJS (1.x) applications to modern React. This repository provides utilities, patterns, and real-world examples to help teams successfully transition their legacy AngularJS applications to React while maintaining production stability.
 
 [![npm version](https://img.shields.io/npm/v/ng-react-toolkit.svg)](https://www.npmjs.com/package/ng-react-toolkit)

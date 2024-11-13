@@ -6,7 +6,7 @@
      "build": "vite build"
    },
    "dependencies": {
-     "ng-react-tookit": "workspace:*",
+     "ng-react-toolkit": "workspace:*",
      "react": "^18.2.0",
      "react-dom": "^18.2.0",
      "angular": "^1.6.10"
