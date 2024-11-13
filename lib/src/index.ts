@@ -1,11 +1,19 @@
 import angular from 'angular';
 import { TestService } from './services/TestService';
+import { Inject, Injectable } from './decorators/inject';
+import { ConnectStore } from './decorators/connect-store';
+import { useNgServices } from './hooks/use-ng-services';
 
-// Create the main module
 export const ngReactToolkit = angular
   .module('ngReactToolkit', [])
   .service('testService', TestService)
   .name;
 
-// Export services for TypeScript support
-export { TestService };
+
+export {
+  useNgServices,
+  ConnectStore,
+  TestService,
+  type Inject,
+  type Injectable
+};
