@@ -25,11 +25,5 @@
    "exclude": [
       "node_modules",
       "dist",
-      "**/*.spec.ts",
-      "**/*.test.ts",
-      "**/*.spec.tsx",
-      "**/*.test.tsx",
-      "**/__tests__/*",
-      "jest.config.ts"
    ]
 }

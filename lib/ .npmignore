@@ -7,7 +7,7 @@ __tests__
 *.test.*
 coverage/
 jest.config.ts
-tsconfig.test.json
+tsconfig.build.json
 
 # Config files
 .gitignore
