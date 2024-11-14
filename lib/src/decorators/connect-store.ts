@@ -8,7 +8,7 @@ interface AngularController {
  *  connect to zustand vanilla store
  * usage example
  * import { createStore } from 'zustand/vanilla';
- * ```ts
+ * @example
  * interface CounterState {
  *   count: number;
  *   increment: () => void;
@@ -25,21 +25,18 @@ interface AngularController {
  *   public count: number = 0;
  *   
  *   static $inject = ['$scope'];
- * 
- *   @ConnectStore(counterStore, function(this: CounterController, state) {
+ *   \@ConnectStore(counterStore, function(this: CounterController, state) {
  *     this.count = state.count;
  *   })
  *   constructor(public $scope: ng.IScope) {}
- * 
  *   increment() {
  *     counterStore.getState().increment();
  *   }
- * 
  *   decrement() {
  *     counterStore.getState().decrement();
  *   }
  * }
- * ```
+ * 
  * @param store 
  * @param updateFn 
  * @returns 
@@ -47,6 +44,8 @@ interface AngularController {
 export function ConnectStore<T>(store: StoreApi<T>, updateFn: (state: T) => void) {
   return function(target: any, _propertyKey: string, descriptor: PropertyDescriptor) {
     const originalFn = descriptor.value;
+
+
 
     descriptor.value = function(this: AngularController, ...args: any[]) {
       // Call the original constructor
