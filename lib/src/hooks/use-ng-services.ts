@@ -4,8 +4,8 @@ import { InjectToken } from "../types";
 
 declare global {
   interface Window {
-    _injector: angular.auto.IInjectorService;
-    _provide: angular.auto.IProvideService;
+    _injector?: angular.auto.IInjectorService;
+    _provide?: angular.auto.IProvideService;
   }
 }
 

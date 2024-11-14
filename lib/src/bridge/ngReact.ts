@@ -20,8 +20,8 @@ type PropDefinition = string | [string, PropConfig];
 // Types for window augmentation
 declare global {
   interface Window {
-    _injector: angular.auto.IInjectorService;
-    _provide: angular.auto.IProvideService;
+    _injector?: angular.auto.IInjectorService;
+    _provide?: angular.auto.IProvideService;
     [key: string]: any; // For dynamic component access
   }
 }
