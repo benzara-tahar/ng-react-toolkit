@@ -37,7 +37,7 @@ const useNgServices = <T extends InjectToken[]>(
 
     if (!injector) {
       throw new Error(
-        "injector not found, please make sure to add ngReactInterop module to your main module"
+        "injector not found, please make sure to add you are running this hook inside an angularJs application"
       );
     }
 

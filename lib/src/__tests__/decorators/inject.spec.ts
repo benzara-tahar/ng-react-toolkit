@@ -47,14 +47,14 @@ describe("Test inject decorator", () => {
         try {
             Inject("$http")(TestFunctionController);
         } catch (error) {
-            expect(error instanceof Error).toBe(true);
+            expect(error).toBeInstanceOf(Error);
             expect((error as Error).message).toBe("@Inject Error (missing dependencies: 1): ensure the number of arguments in the @Inject decorator matches the number of arguments in your class constructor or function");
         }
 
         try {
             Inject("$compile", "$cookies", "$q", "$sce")(TestFunctionController);
         } catch (error) {
-            expect(error instanceof Error).toBe(true);
+            expect(error).toBeInstanceOf(Error);
             expect((error as Error).message).toBe("@Inject Error (extra dependencies: 2): ensure the number of arguments in the @Inject decorator matches the number of arguments in your class constructor or function");
         }
     });

@@ -12,7 +12,7 @@ const config: Config = {
     }]
   },
   // Added reporter configurations
-  verbose: true,
+  verbose: false,
   reporters: [
     "default",
     ["jest-summary-reporter", { "failuresOnly": true }],
@@ -25,7 +25,7 @@ const config: Config = {
   collectCoverage: true,
   coverageReporters: ["text", "lcov"],
   // Display individual test results
-  notify: true,
+  notify: false,
   // Show test execution time
   testLocationInResults: true,
   // Cleaner error stack traces
