@@ -1,9 +1,9 @@
 // webpack.config.js
 const path = require('path');
-const webpack = require('web')
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-/** @type {webpack} */
+/** @type {webpack.Configuration} */
 module.exports = {
   mode: 'development',
   // Update entry point to TypeScript
@@ -42,7 +42,10 @@ module.exports = {
   ],
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
-    
+    symlinks: true,
+    alias: {
+      'ng-react-toolkit': path.resolve(__dirname, '../../lib/src')
+    }
   },
   devServer: {
     static: {

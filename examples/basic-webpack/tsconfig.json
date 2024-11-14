@@ -16,5 +16,5 @@
      "noEmit": true,
      "jsx": "react-jsx",
    },
-   "include": ["src", "examples/basic-webpack/src/index.ts"]
+   "include": ["src", "webpack.config.js"]
  }

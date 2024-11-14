@@ -7,7 +7,8 @@
       "test": "pnpm -r test",
       "docs": "pnpm --filter ng-react-toolkit-docs start",
       "docs:build": "pnpm --filter ng-react-toolkit-docs build",
-      "docs:serve": "pnpm --filter ng-react-toolkit-docs serve"
+      "docs:serve": "pnpm --filter ng-react-toolkit-docs serve",
+      "examples:basic-webpack": "pnpm --filter ng-react-toolkit-examples:basic-webpack start"
    },
    "devDependencies": {
       "typescript": "^5.0.0"
