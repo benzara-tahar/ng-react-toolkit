@@ -62,9 +62,6 @@ ng-react-toolkit is built around several core concepts:
 3. **Lifecycle Hooks**: Properly handle component lifecycle across both frameworks
 4. **Event Handling**: Bidirectional event communication between AngularJS and React
 
-## Next Steps
-
-- Explore our [Component Migration Guide](./component-migration.md) for detailed migration strategies
 
 ## Community and Support
 

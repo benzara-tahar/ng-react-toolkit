@@ -126,7 +126,7 @@ type ResolveServices<T extends InjectToken[]> = {
 | Error Message | Cause | Solution |
 |--------------|-------|----------|
 | "injector not found..." | Hook used outside AngularJS context | Ensure the React component is mounted within the AngularJS application |
-| "service {name} not found" | Requested service isn't registered | Verify service name and registration in AngularJS |
+| "service name not found" | Requested service isn't registered | Verify service name and registration in AngularJS |
 
 ## Future Improvements
 
