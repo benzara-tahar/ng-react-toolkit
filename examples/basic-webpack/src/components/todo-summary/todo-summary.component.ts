@@ -50,18 +50,15 @@ export function connectStore<T>(
 }
 
 
-@Inject('TodoService', '$scope')
-class TodoFilterController {
-   filter: 'all' | 'pending' | 'completed' = 'all';
-   loading!: boolean;
-   lastId!: number;
+@Inject('$scope')
+class TodoSummaryController {
+   remaining!: number;
 
 
-   constructor(private todoService: TodoService, private $scope: angular.IScope) {
+   constructor(private $scope: angular.IScope) {
       connectStore(todoStore, this, (state) => {
          console.log('TODO Filter: change ⚡', { state });
-         this.lastId = state.lastId;
-         // $scope.$digest();
+         this.remaining = state.getRemainingCount();
       })
       $scope.$watch(() => {
          console.log('TODO Filter: running angular digest 🅰️');
@@ -69,8 +66,8 @@ class TodoFilterController {
    }
 }
 
-export class TodoFilterComponent implements angular.IComponentOptions {
-   public controller = TodoFilterController;
+export class TodoSummaryComponent implements angular.IComponentOptions {
+   public controller = TodoSummaryController;
    public controllerAs = '$ctrl';
-   public templateUrl = '/src/components/todo-filter/todo-filter.component.html';
+   public templateUrl = '/src/components/todo-summary/todo-summary.component.html';
 }
