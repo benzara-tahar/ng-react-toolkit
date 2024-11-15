@@ -2,46 +2,73 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Getting started
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Modernize your AngularJS applications with React, **seamlessly and incrementally**. ng-react-toolkit provides a set of primitives and opinionated recipes to help you migrate your legacy AngularJS applications to React without a complete rewrite.
+
+## Why ng-react-toolkit?
+
+- 🔄 **Incremental Migration**: Migrate component by component while keeping your application functional
+- 🛠 **Rich Primitives**: Ready-to-use tools for common migration patterns
+- 📚 **Best Practices**: Opinionated recipes based on real-world migration experiences
+- 🔌 **Seamless Integration**: Smooth interoperability between AngularJS and React components
 
 ## Getting Started
 
-Get started by **creating a new site**.
+### Prerequisites
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+- Existing AngularJS application (1.x)
+- [Node.js](https://nodejs.org/en/download/) version 16.0 or above
+- npm or yarn package manager
 
-### What you'll need
+### Installation
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
+Add ng-react-toolkit to your existing AngularJS project:
 
 ```bash
-npm init docusaurus@latest my-website classic
+# Using npm
+npm install ng-react-toolkit
+
+# Using yarn
+yarn add ng-react-toolkit
 ```
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+### Basic Setup
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+1. First, configure ng-react-toolkit in your AngularJS module:
 
-## Start your site
+```javascript
+import  'ng-react-toolkit';
+import angular from 'angular';
 
-Run the development server:
-
-```bash
-cd my-website
-npm run start
+angular.module('yourApp', ['ng-react-toolkit']);
 ```
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+2. Start using React components in your AngularJS templates:
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
+```html
+<react-component 
+  component="YourReactComponent"
+  props="{ message: 'Hello from React!' }">
+</react-component>
+```
 
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+## Core Concepts
+
+ng-react-toolkit is built around several core concepts:
+
+1. **Component Bridge**: Seamlessly render React components within AngularJS templates
+2. **State Management**: Bridge between AngularJS scope and React state/props
+3. **Lifecycle Hooks**: Properly handle component lifecycle across both frameworks
+4. **Event Handling**: Bidirectional event communication between AngularJS and React
+
+## Next Steps
+
+- Explore our [Component Migration Guide](./component-migration.md) for detailed migration strategies
+
+## Community and Support
+
+- 📦 [GitHub Repository](https://github.com/benzara-tahar/ng-react-toolkit)
+
+
+The documentation will continue to grow with more examples, best practices, and community contributions. Start your migration journey today with ng-react-toolkit!
