@@ -1,20 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useTodoStore } from "../store/useTodoStore";
 import { useNgServices } from "ng-react-toolkit";
 
 type Props = {};
 export const TodoList: React.FC<Props> = ({}) => {
   const { todoService } = useNgServices("TodoService") as any;
-  const [newTodoText, setNewTodoText] = useState("");
-  const {
-    todos,
-    loading,
-    loadTodos,
-    addTodo,
-    toggleTodo,
-    deleteTodo,
-    getRemainingCount,
-  } = useTodoStore();
+  const { todos, loading, loadTodos, toggleTodo, deleteTodo } = useTodoStore();
 
   useEffect(() => {
     loadTodos();
@@ -22,45 +13,25 @@ export const TodoList: React.FC<Props> = ({}) => {
 
   console.log("react render ⚛️");
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (newTodoText.trim()) {
-      addTodo(newTodoText);
-      setNewTodoText("");
-    }
-  };
-
   return (
     <article className="pure-g react">
+      <code className="component-name-tag">{"<ToDoList/>"}</code>
+
       <div className="pure-u-1">
         <header>
-          <p className="todo-count">Remaining tasks: {getRemainingCount()}</p>
-          <p className="todo-count">Count (via service): {todoService.count}</p>
-          <br />
+          <b>Count : {todoService.count} </b>
+          &nbsp;
           <button
+            type="button"
+            className="pure-button pure-button-warning button-small"
             onClick={() => {
               todoService.count++;
+              console.log({ todoService });
             }}
           >
             increment count
           </button>
         </header>
-
-        <form onSubmit={handleSubmit} className="pure-form angular">
-          <div className="todo-input-group">
-            <input
-              type="text"
-              value={newTodoText}
-              onChange={(e) => setNewTodoText(e.target.value)}
-              placeholder="What needs to be done in react?"
-              className="pure-input-1"
-              required
-            />
-            <button type="submit" className="pure-button pure-button-primary">
-              Add Todo
-            </button>
-          </div>
-        </form>
 
         {loading && <p className="todo-loading">Loading...</p>}
 

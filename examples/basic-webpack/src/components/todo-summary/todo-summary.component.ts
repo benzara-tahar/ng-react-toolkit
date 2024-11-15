@@ -1,16 +1,9 @@
 
 import angular from 'angular';
 import { StoreApi } from 'zustand';
-import { Todo } from '../../models/todo';
-import { TodoService } from '../../services/todo.service';
-import { ConnectStore, Inject } from 'ng-react-toolkit';
 import { todoStore } from '../../store/useTodoStore';
+import { Inject } from 'ng-react-toolkit';
 
-// interface AngularScope extends angular.IRootScopeService {
-//    $root: { $$phase: string | null };
-//    $apply: () => void;
-//    $on: (event: string, callback: () => void) => void;
-//  }
 
 type AngularScope = any;
 
@@ -49,20 +42,16 @@ export function connectStore<T>(
    };
 }
 
-
 @Inject('$scope')
 class TodoSummaryController {
    remaining!: number;
-
-
-   constructor(private $scope: angular.IScope) {
+   store = todoStore;
+   
+   constructor(protected  readonly $scope: angular.IScope) {
+      
       connectStore(todoStore, this, (state) => {
-         console.log('TODO Filter: change ⚡', { state });
          this.remaining = state.getRemainingCount();
       })
-      $scope.$watch(() => {
-         console.log('TODO Filter: running angular digest 🅰️');
-      });
    }
 }
 
@@ -71,3 +60,11 @@ export class TodoSummaryComponent implements angular.IComponentOptions {
    public controllerAs = '$ctrl';
    public templateUrl = '/src/components/todo-summary/todo-summary.component.html';
 }
+
+
+
+
+
+// $scope.$watch(() => {
+//    console.log('TODO Filter: running angular digest 🅰️');
+// });

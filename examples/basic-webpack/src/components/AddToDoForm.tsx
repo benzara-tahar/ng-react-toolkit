@@ -17,24 +17,24 @@ export const AddToDoForm: React.FC = () => {
 
   return (
     <form className="pure-form react">
-      <div className="todo-input-group">
+      <code className="component-name-tag">{'<AddToDoForm/>'}</code>
 
-      
-      <input
-        type="text"
-        value={newTodoText}
-        onChange={(e) => setNewTodoText(e.target.value)}
-        placeholder="What needs to be done in angular?"
-        className="pure-input-1"
-        required
+      <div className="todo-input-group">
+        <input
+          type="text"
+          value={newTodoText}
+          onChange={(e) => setNewTodoText(e.target.value)}
+          placeholder="What needs to be done ?"
+          className="pure-input-1"
+          required
         />
-      <button
-        className="pure-button pure-button-primary"
-        onClick={handleAddClick}
+        <button
+          className="pure-button pure-button-primary"
+          onClick={handleAddClick}
         >
-        Add
-      </button>
-        </div>
+          Add
+        </button>
+      </div>
     </form>
   );
 };
