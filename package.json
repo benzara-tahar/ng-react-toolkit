@@ -9,7 +9,8 @@
       "docs:build": "pnpm --filter ng-react-toolkit-docs build",
       "docs:serve": "pnpm --filter ng-react-toolkit-docs serve",
       "docs:start": "pnpm --filter ng-react-toolkit-docs start",
-      "examples:basic-webpack": "pnpm --filter ng-react-toolkit-examples:basic-webpack start"
+      "examples:basic-webpack": "pnpm --filter ng-react-toolkit-examples:basic-webpack start",
+      "publish": "cd lib &&  npm pack --dry-run &&  npm publish"
    },
    "devDependencies": {
       "typescript": "^5.0.0"
