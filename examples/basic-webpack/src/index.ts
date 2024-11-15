@@ -3,7 +3,7 @@ import 'ng-react-toolkit';
 import "zustand";
 
 // apps
-import "./app-hybrid";
+import "./app";
 
 // styles
 import "purecss/build/pure-min.css";

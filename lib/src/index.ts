@@ -3,7 +3,8 @@
  */
 export type {
   InjectToken,
-  AngularJsCoreInjectTokens
+  AngularJsCoreInjectTokens,
+  TypedBinding
 } from './types';
 
 /**
@@ -37,4 +38,4 @@ export const ngReactToolkit = angular
   .service('testService', TestService)
   .name;
 
-  export { default as ngReact } from './bridge/ngReact';
+export { default as ngReact } from './bridge/ngReact';

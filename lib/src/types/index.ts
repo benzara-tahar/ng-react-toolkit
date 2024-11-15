@@ -88,3 +88,16 @@ export type AngularJsCoreInjectTokens =
 
 // Create a generic type parameter for user-defined service types
 export type InjectToken<T extends AngularJsCoreInjectTokens = never> = AngularJsCoreInjectTokens | T  |  (string & {});
+
+/**
+ * @ Text binding
+ * = Two-way binding
+ * & Method binding
+ * < One-way binding
+ * ? Optional binding
+ * */
+type AngularBinding = "@" | "<" | "&" | "=" | "@?" | "<?" | "&?" | "=?";
+export type TypedBinding<TProps> = {
+   [key in keyof TProps] : AngularBinding;
+};
+
