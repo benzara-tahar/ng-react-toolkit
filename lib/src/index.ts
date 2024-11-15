@@ -11,7 +11,8 @@ export type {
  * Decorators
  */
 export { Inject } from './decorators/inject';
-export { ConnectStore } from './decorators/connect-store';
+export { connectStore } from './decorators/connect-store';
+export { ConnectStoreDecorator  } from './decorators/connect-store.deprecated';
 
 
 /**

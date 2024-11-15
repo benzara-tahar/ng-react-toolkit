@@ -4,7 +4,9 @@ import { Todo } from "../models/todo";
 
 @Inject('$q')
 export class TodoService {
+    
     count = 0 ;
+
     loading!: boolean;
     private todos: Todo[] = [];
     private lastId: number = 0;
