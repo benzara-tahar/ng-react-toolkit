@@ -1,42 +1,8 @@
-<react-component name="AddToDoForm" ></react-component>
-
-<todo-filters></todo-filters>
-
-<react-component name="ToDoList" ></react-component>
-<!-- 
-<article>
-   <header>
-       <p>Remaining tasks: {{$ctrl.getRemainingCount()}}</p>
-   </header>
-
-   <form ng-submit="$ctrl.addTodo()">
-       <div class="grid">
-           <input 
-               type="text" 
-               ng-model="$ctrl.newTodoText" 
-               placeholder="What needs to be done?"
-               required>
-           <button type="submit">Add Todo</button>
-       </div>
-   </form>
-    <p ng-if="$ctrl.todoService.loading"> loading... </p>
-   <ul>
-       <li ng-repeat="item in $ctrl.getAllTodos()" class="grid">
-           <button 
-               class="secondary outline" 
-               ng-click="$ctrl.deleteTodo(item.id)">
-               🗑️
-           </button>
-           <label>
-               <input 
-                   type="checkbox" 
-                   ng-checked="item.completed"
-                   ng-click="$ctrl.toggleTodo(item.id)">
-               <span ng-class="{'text-decoration-line-through': item.completed}">
-                   {{item.text}}
-               </span>
-           </label>
-           
-       </li>
-   </ul>
-</article> -->
+<div class="angular">
+  <react-component name="AddToDoForm"></react-component>
+  <!-- <react-component name="ToDoList"  ></react-component> -->
+  <react-component
+    name="ToDoList"
+    props="{ count: $ctrl.todoService.count }"
+  ></react-component>
+</div>

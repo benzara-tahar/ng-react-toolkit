@@ -3,34 +3,38 @@ import { useTodoStore } from "../store/useTodoStore";
 
 export const AddToDoForm: React.FC = () => {
   const [newTodoText, setNewTodoText] = useState("");
-  const {
-    todos,
-    loading,
-    loadTodos,
-    addTodo,
-    toggleTodo,
-    deleteTodo,
-    getRemainingCount,
-  } = useTodoStore();
+  const { addTodo } = useTodoStore();
 
-  function handleAddClick() {
+  function handleAddClick(e: any) {
+    e.preventDefault();
     const text = newTodoText.trim();
     if (text === "") {
       return;
     }
     addTodo(text);
+    setNewTodoText("");
   }
 
   return (
-    <form>
-      <p>Add to do form</p>
+    <form className="pure-form react">
+      <div className="todo-input-group">
+
+      
       <input
         type="text"
         value={newTodoText}
         onChange={(e) => setNewTodoText(e.target.value)}
+        placeholder="What needs to be done in angular?"
+        className="pure-input-1"
         required
-      />
-      <button onClick={handleAddClick}>Add</button>
+        />
+      <button
+        className="pure-button pure-button-primary"
+        onClick={handleAddClick}
+        >
+        Add
+      </button>
+        </div>
     </form>
   );
 };

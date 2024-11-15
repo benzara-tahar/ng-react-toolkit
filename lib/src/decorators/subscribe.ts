@@ -41,10 +41,10 @@ interface AngularController {
  * @param updateFn 
  * @returns 
  */
-export function ConnectStore<T>(store: StoreApi<T>, updateFn: (state: T) => void): ClassDecorator {
+export function ConnectStore<T>(store: StoreApi<T>, updateFn: (state: T) => void) {
   return function(target: any, _propertyKey: string, descriptor: PropertyDescriptor) {
-    console.log({ target, _propertyKey, descriptor}); 
     const originalFn = descriptor.value;
+
 
 
     descriptor.value = function(this: AngularController, ...args: any[]) {
@@ -72,5 +72,5 @@ export function ConnectStore<T>(store: StoreApi<T>, updateFn: (state: T) => void
     };
 
     return descriptor;
-  } as ClassDecorator;
+  };
 }

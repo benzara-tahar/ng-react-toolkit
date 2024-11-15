@@ -3,6 +3,7 @@
    "private": true,
    "scripts": {
       "build": "pnpm -r build",
+      "build:lib": "pnpm --filter ng-react-toolkit build",
       "dev": "pnpm -r dev",
       "test": "pnpm -r test",
       "docs": "pnpm --filter ng-react-toolkit-docs start",

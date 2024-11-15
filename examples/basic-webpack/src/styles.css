@@ -5,17 +5,24 @@ body {
 .react {
    border: 2px solid blue;
    padding: 0.5rem;
+   margin: 0.5rem;
+   border-radius:  0.25rem;
+   background: #d4f4ff;
  }
 
  .angular {
    border: 2px solid red;
+   margin: 0.5rem;
    padding: 0.5rem;
+   border-radius:  0.25rem;
+   background: #ffeaf0;
+   
  }
 
  .grid-container {
   margin:1rem;
    display: grid;
-   grid-template-columns: 1fr 1fr;
+   max-width: 600px;
  }
 
 

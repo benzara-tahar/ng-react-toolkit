@@ -9,7 +9,7 @@ class TodoManagerController implements angular.IOnInit {
    newTodoText: string = '';
    loading!: boolean;
 
-   constructor(private todoService: TodoService, $scope: angular.IScope) {
+   constructor(public todoService: TodoService, $scope: angular.IScope) {
       $scope.$watch(() => {
          console.log('running angular digest 🅰️');
       });
@@ -40,7 +40,6 @@ class TodoManagerController implements angular.IOnInit {
    getRemainingCount(): number {
       return this.todoService.getRemainingCount();
    }
-
 
 }
 
