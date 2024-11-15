@@ -2,6 +2,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+console.log(__dirname)
 
 /** @type {webpack.Configuration} */
 module.exports = {
@@ -16,22 +17,31 @@ module.exports = {
     rules: [
       {
         // Update test regex to include tsx and ts files
-        test: /\.(ts|tsx|js|jsx)$/,
+        test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
+        include: [
+          path.resolve(__dirname, "src"),
+          path.resolve(__dirname, "../../lib/src")  // Add this line
+        ],
         use: {
-          loader: 'babel-loader',
+          loader: 'esbuild-loader',
           options: {
-            presets: [
-              '@babel/preset-env',
-              ['@babel/preset-react', { runtime: 'automatic' }],
-              '@babel/preset-typescript'
-            ]
+            loader: 'tsx', // Handles both tsx and jsx
           }
         }
       },
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.html$/,
+        exclude: /index\.html$/,
+        use: [
+          {
+            loader: 'html-loader'
+          }
+        ]
       }
     ]
   },
@@ -48,9 +58,11 @@ module.exports = {
     }
   },
   devServer: {
-    static: {
-      directory: path.join(__dirname, 'dist'),
-    },
+    static: "./",
+
+    // static: {
+    //   directory: path.join(__dirname, 'dist'),
+    // },
     port: 3000,
     hot: true
   }
